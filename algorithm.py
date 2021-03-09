@@ -13,7 +13,7 @@ def find_longest_path(mat):
                     current_path += 1
                     current_row = row
                     current_col = col
-                    passed_coords = [(row, col)]
+                    passed_coords = {(row, col)}
 
                     while True:
                         # right
@@ -30,7 +30,7 @@ def find_longest_path(mat):
                             current_row -= 1
                         else:
                             break
-                        passed_coords.append((current_row, current_col))
+                        passed_coords.add((current_row, current_col))
                         current_path += 1
 
                     if current_path > path:
